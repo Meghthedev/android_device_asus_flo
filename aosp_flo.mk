@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_mini_tablet_wifionly.mk)
+$(call inherit-product, vendor/aosp/config/common_full_tablet_wifionly.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
@@ -22,11 +22,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, device/asus/flo/device.mk)
 
 # Shipping API
-$(call inherit-product, vendor/lineage/build/target/product/product_launched_with_j_mr2.mk)
+$(call inherit-product, vendor/aosp/build/target/product/product_launched_with_j_mr2.mk)
+
+TARGET_GAPPS_ARCH := arm
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := flo
-PRODUCT_NAME := lineage_flo
+PRODUCT_NAME := aosp_flo
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 7
 PRODUCT_MANUFACTURER := asus
